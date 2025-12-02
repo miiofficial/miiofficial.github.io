@@ -3,74 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Must-Have Accessories of the Year</title>
+    <title>The Minimalist Wardrobe - Your Capsule Guide</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #fff;
-            color: #111;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Light gray background for contrast */
         }
-        h1, h2 {
-            color: #333;
+        .text-primary {
+            color: #3b82f6; /* Blue for primary accents */
         }
-        img {
-            max-width: 100%;
-            margin: 15px 0;
+        .btn-primary {
+            background-color: #1f2937; /* Dark gray/black for main buttons */
+            transition: all 0.3s ease;
         }
-        .tip {
-            font-style: italic;
-            color: #555;
+        .btn-primary:hover {
+            background-color: #4b5563;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body>
-    <h1>Top 10 Must-Have Accessories of the Year</h1>
-    <p>Accessories are the ultimate way to transform any outfit from basic to <strong>wow</strong>. Whether it’s a casual brunch, a night out, or a fancy event, the right accessory can completely elevate your look. This year, we’ve seen some amazing trends take over the fashion world. Here’s a list of <strong>Top 10 Must-Have Accessories for this year</strong> that every fashionista should own.</p>
+<body class="antialiased">
 
-    <h2>1. Chunky Chain Necklaces</h2>
-    <p>Bold, statement-making chain necklaces are everywhere. They can instantly upgrade a simple tee or sweater and make even casual looks feel luxe. Mix metals or layer multiple chains for that effortlessly chic vibe.</p>
-    <img src="image.jpg" alt="Chunky Chain Necklace">
+    <!-- Sticky Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900 tracking-tight">
+                <a href="./index.html" class="hover:text-primary">The Minimalist Wardrobe</a>
+            </h1>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#guide" class="hover:text-primary transition duration-150">Start Here</a>
+                <a href="#essentials" class="hover:text-primary transition duration-150">Essentials</a>
+                <a href="./reviews.html" class="hover:text-primary transition duration-150">Reviews</a>
+                <a href="./old-topic.html" class="hover:text-primary transition duration-150">Sustainability Focus</a> <!-- New Link for Other Topic -->
+                <a href="#shop" class="hover:text-primary transition duration-150">Shop Our Picks</a>
+            </nav>
+            <button class="md:hidden p-2 text-gray-600 hover:text-primary rounded-md focus:outline-none">
+                <!-- Simple Menu Icon (lucide-react placeholder) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
 
-    <h2>2. Mini Bags</h2>
-    <p>Tiny bags aren’t just cute—they’re essential. This year, designers are playing with geometric shapes, bright colors, and luxurious textures. Perfect for carrying your phone, lipstick, and a little confidence.</p>
-    <img src="im.jpg" alt="Mini Bag">
+    <!-- Hero Section -->
+    <section class="relative bg-white pt-16 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="lg:col-span-6 xl:col-span-6">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                        <span class="block">Dress Better.</span>
+                        <span class="block text-primary">Stress Less.</span>
+                    </h2>
+                    <p class="mt-3 text-xl text-gray-500 sm:mt-5 sm:text-2xl">
+                        Discover the power of a Capsule Wardrobe: fewer clothes, endless outfits. We guide you from clutter to clarity, curating a selection of timeless pieces that work for *your* life.
+                    </p>
+                    <div class="mt-10 max-w-md mx-auto sm:flex sm:justify-center lg:mx-0">
+                        <div class="rounded-full shadow">
+                            <a href="#guide" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white btn-primary md:py-4 md:text-lg md:px-10">
+                                Start Your Journey
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 lg:col-span-6 xl:col-span-6">
+                    <!-- Placeholder Image for Visual Appeal -->
+                    <img class="rounded-xl shadow-2xl object-cover h-96 w-full lg:h-auto" 
+                         src="https://placehold.co/800x600/1f2937/ffffff?text=Curated+Style" 
+                         alt="A clean, minimalist wardrobe layout with essential clothes folded."
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/1f2937/ffffff?text=Curated+Style';">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>3. Oversized Sunglasses</h2>
-    <p>The bigger, the better! Oversized sunglasses add drama and glamour to any look. Think 70s retro vibes or modern square frames—they’re perfect for hiding tired eyes too 😉.</p>
-    <img src="glasses.jpg" alt="Oversized Sunglasses">
+    <!-- Main Content Section: The Guide -->
+    <main id="guide" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- Introduction to the Concept -->
+        <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-3">What is a Capsule Wardrobe?</h3>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                A capsule wardrobe is a collection of essential, timeless clothing items that can be easily mixed and matched. It removes decision fatigue, saves you money, and ensures you always look polished. It's not about owning *nothing*; it's about owning the *right things*.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed italic border-l-4 border-primary pl-4">
+                "The goal is simple: maximize outfit combinations while minimizing the total number of items."
+            </p>
+        </div>
 
-    <h2>4. Statement Belts</h2>
-    <p>A belt can transform your outfit completely. This year, wide belts with bold buckles are dominating. Cinch your waist over dresses, blazers, or even oversized shirts to instantly refine your silhouette.</p>
-    <img src="belt.jpg" alt="Statement Belt">
+        <!-- Section 1: 5 Core Categories & Affiliate Potential -->
+        <section id="essentials" class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8">The 5 Core Categories to Invest In</h3>
+            <p class="text-gray-600 text-xl mb-8">
+                These are the foundation of your wardrobe—where quality truly matters. Investing here pays off with years of wear.
+            </p>
 
-    <h2>5. Colorful Scarves</h2>
-    <p>Silk scarves are back in a big way. Tie them around your neck, wear them as a headband, or even wrap them around your bag handle for that playful pop of color. Simple, versatile, and makes your outfit look intentional.</p>
-    <img src="scarves.jpg" alt="Colorful Scarf">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Essential Card 1: Outerwear -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
+                    <h4 class="text-2xl font-semibold mb-3">1. Investment Outerwear</h4>
+                    <p class="text-gray-600 mb-4">A perfectly tailored trench coat or a sharp wool blazer will instantly elevate any base outfit. Choose neutral colors like navy, camel, or black.</p>
+                    <a href="./reviews.html" class="text-primary font-medium hover:underline text-sm tracking-wider">
+                        Shop Our Top-Rated Blazers &rarr; <!-- Link Updated -->
+                    </a>
+                </div>
+                
+                <!-- Essential Card 2: Denim -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
+                    <h4 class="text-2xl font-semibold mb-3">2. Flawless Denim</h4>
+                    <p class="text-gray-600 mb-4">Forget fast-fashion jeans. Focus on two pairs: a dark wash, straight-leg for polish, and a light wash, comfortable pair for weekends. Fit is everything here.</p>
+                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
+                        See Our Guide to Finding Your Perfect Fit (Affiliate Link) &rarr;
+                    </a>
+                </div>
 
-    <h2>6. Pearl Hair Clips</h2>
-    <p>Pearls aren’t just for jewelry anymore! Hair accessories like pearl-studded clips, barrettes, and headbands are the cutest way to glam up a simple hairstyle. Perfect for brunches, office days, or Zoom calls.</p>
-    <img src="pearl.jpg" alt="Pearl Hair Clip">
+                <!-- Essential Card 3: Footwear -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
+                    <h4 class="text-2xl font-semibold mb-3">3. Go-Anywhere Footwear</h4>
+                    <p class="text-gray-600 mb-4">One clean white sneaker, one classic leather loafer, and one practical ankle boot. That's usually all you need to cover 90% of occasions year-round.</p>
+                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
+                        Shop Durable, Comfortable Shoes (Affiliate Link) &rarr;
+                    </a>
+                </div>
 
-    <h2>7. Chunky Loafers or Statement Shoes</h2>
-    <p>Accessories don’t stop at jewelry—your shoes are part of the game too. Chunky loafers, bold heels, or quirky sneakers are trending. They make every outfit look polished yet fashion-forward.</p>
-    <img src="loafers.jpg" alt="Chunky Loafers">
+                <!-- Essential Card 4: Base Layers -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
+                    <h4 class="text-2xl font-semibold mb-3">4. Quality Base Layers</h4>
+                    <p class="text-gray-600 mb-4">White tees, black tank tops, and classic cotton sweaters. They need to be durable and hold their shape, as they are the workhorses of every outfit.</p>
+                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
+                        The 3 Best Base Layer Brands We Love (Affiliate Link) &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <h2>8. Layered Bracelets</h2>
-    <p>Stacking bracelets is a fun way to express your personality. Mix metals, textures, and styles for that effortless boho-chic vibe. Don’t be afraid to go a little wild—it’s all about fun layers this year!</p>
-    <img src="layered bracelets.jpg" alt="Layered Bracelets">
 
-    <h2>9. Bucket Hats</h2>
-    <p>Yes, the bucket hat is officially a must-have accessory this year. From casual streetwear to chic high-fashion, this hat adds a playful, retro touch to any outfit.</p>
-    <img src="bucket hats.jpg" alt="Bucket Hat">
+        <!-- Section 2: Step-by-Step Guide -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8">Building Your First Capsule: A 4-Step Process</h3>
 
-    <h2>10. Luxury Watches</h2>
-    <p>Classic, timeless, and practical. A beautiful watch is not only functional but also an instant statement piece. Whether it’s sleek minimalism or bold gold designs, it’s worth investing in one that makes your outfit shine.</p>
-    <img src="watch.jpg" alt="Luxury Watch">
+            <ol class="space-y-8">
+                <li class="p-6 bg-white rounded-xl shadow-md">
+                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">1.</span>
+                    <div class="inline-block w-3/4">
+                        <h4 class="text-xl font-semibold mb-2">Define Your Lifestyle (The 80/20 Rule)</h4>
+                        <p class="text-gray-700">What do you do 80% of the time? Work from home? Business formal? Casual errands? Your capsule must reflect reality, not the outfits you *wish* you wore. This determines your initial purchase priority.</p>
+                    </div>
+                </li>
+                <li class="p-6 bg-white rounded-xl shadow-md">
+                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">2.</span>
+                    <div class="inline-block w-3/4">
+                        <h4 class="text-xl font-semibold mb-2">Choose Your Color Palette</h4>
+                        <p class="text-gray-700">Pick 2-3 **Neutrals** (Black, White, Gray, Navy, Beige) and 1-2 **Accent Colors** (Mustard, Deep Green, Dusty Rose). Every item you buy should match every other neutral piece you own.</p>
+                    </div>
+                </div>
+                </li>
+                <li class="p-6 bg-white rounded-xl shadow-md">
+                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">3.</span>
+                    <div class="inline-block w-3/4">
+                        <h4 class="text-xl font-semibold mb-2">Audit and Cull Your Closet</h4>
+                        <p class="text-gray-700">Remove anything that doesn't fit, is damaged, or hasn't been worn in a year. Be ruthless. Only re-introduce pieces that fit your new defined lifestyle and color palette. This is the hardest part!</p>
+                    </div>
+                </li>
+                <li class="p-6 bg-white rounded-xl shadow-md">
+                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">4.</span>
+                    <div class="inline-block w-3/4">
+                        <h4 class="text-xl font-semibold mb-2">Shop Mindfully & Fill the Gaps</h4>
+                        <p class="text-gray-700">Create a shopping list based *only* on the gaps identified in Step 3. Use our affiliate-backed reviews to find the best quality piece for your budget, ensuring your investment lasts.</p>
+                        <a href="#shop" class="text-sm font-medium text-primary hover:text-gray-900 mt-2 inline-block">See our Gap-Filling Recommendations &rarr;</a>
+                    </div>
+                </li>
+            </ol>
+        </section>
 
-    <h2>Final Thoughts</h2>
-    <p>Accessories are the ultimate tool to express your style and personality. These <strong>top 10 must-haves</strong> are versatile, trendy, and can elevate almost any outfit. Whether you’re investing in a few key pieces or going all out, make sure to choose items that feel authentic to your style.</p>
-    <p class="tip">💡 Pro Tip: Mix and match accessories to create your unique signature look. Sometimes, one statement piece is all it takes to turn a basic outfit into a showstopper!</p>
+        <!-- Section 3: Affiliate Product Call-to-Action -->
+        <section id="shop" class="bg-white p-8 sm:p-12 rounded-xl shadow-2xl">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Curated Picks: High-Quality, High-Versatility</h3>
+            <p class="text-center text-gray-600 mb-10 text-lg max-w-3xl mx-auto">
+                We've done the research so you don't have to. These pieces are consistently recommended for their durability, fit, and timeless style—perfect for anchoring your new capsule.
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Product Card 1: The Essential Blazer -->
+                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=Essential+Blazer" alt="A classic black tailored blazer" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=Essential+Blazer';">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h4 class="text-xl font-semibold text-gray-900">The All-Season Black Blazer</h4>
+                        <p class="text-gray-500 text-sm mt-1 mb-3">Our #1 pick for effortless professional and casual wear.</p>
+                        <div class="mt-auto">
+                            <span class="text-lg font-bold text-gray-800">$189.00</span>
+                            <a href="./reviews.html" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
+                                View Full Review &rarr; <!-- Link Updated -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: The Perfect Denim -->
+                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=Dark+Wash+Jeans" alt="Straight-leg dark wash jeans" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=Dark+Wash+Jeans';">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h4 class="text-xl font-semibold text-gray-900">High-Rise Straight Leg Denim</h4>
+                        <p class="text-gray-500 text-sm mt-1 mb-3">The non-stretch pair that holds its shape wash after wash.</p>
+                        <div class="mt-auto">
+                            <span class="text-lg font-bold text-gray-800">$95.00</span>
+                            <a href="#" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
+                                Shop Now (Affiliate Link)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: The Versatile Sneaker -->
+                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=White+Sneaker" alt="Minimalist white leather sneakers" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=White+Sneaker';">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h4 class="text-xl font-semibold text-gray-900">The Minimalist White Sneaker</h4>
+                        <p class="text-gray-500 text-sm mt-1 mb-3">Durable leather, low-profile, perfect with dresses or trousers.</p>
+                        <div class="mt-auto">
+                            <span class="text-lg font-bold text-gray-800">$120.00</span>
+                            <a href="#" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
+                                Shop Now (Affiliate Link)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-xs text-center text-gray-400 mt-8">
+                *Note: Product recommendations contain affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Pinterest</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a>
+            </div>
+            <p class="mt-8 text-center text-base text-gray-400">
+                &copy; 2025 The Minimalist Wardrobe. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
