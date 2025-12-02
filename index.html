@@ -1,234 +1,232 @@
-.btn-primary:hover {
-            background-color: #4b5563;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Style | Fashion, Beauty Reviews & Trends</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and our custom palette -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf8f9; /* Very light pinkish background */
+            color: #1f2937; /* Dark Slate for elegance */
         }
     </style>
-</head>
-<body class="antialiased">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom palette for a luxurious fashion blog feel
+                        'primary-rose': '#f472b6', // Elegant Rose Pink
+                        'secondary-violet': '#a855f7', // Luxurious Violet for depth
+                        'accent-gold': '#f59e0b', // Premium gold accent
+                        'light-bg': '#ffffff',
+                        'dark-text': '#1f2937',
+                        'soft-gray': '#e5e7eb',
+                    }
+                }
+            }
+        }
 
-    <!-- Sticky Header/Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-900 tracking-tight">
-                <a href="./index.html" class="hover:text-primary">The Minimalist Wardrobe</a>
-            </h1>
-            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
-                <a href="#guide" class="hover:text-primary transition duration-150">Start Here</a>
-                <a href="#essentials" class="hover:text-primary transition duration-150">Essentials</a>
-                <a href="./reviews.html" class="hover:text-primary transition duration-150">Reviews</a>
-                <a href="./old-topic.html" class="hover:text-primary transition duration-150">Sustainability Focus</a> <!-- New Link for Other Topic -->
-                <a href="#shop" class="hover:text-primary transition duration-150">Shop Our Picks</a>
-            </nav>
-            <button class="md:hidden p-2 text-gray-600 hover:text-primary rounded-md focus:outline-none">
-                <!-- Simple Menu Icon (lucide-react placeholder) -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-            </button>
+        // --- JavaScript for simple mobile navigation toggle ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- JavaScript for a custom modal message (instead of alert) ---
+        function showModal(title, message) {
+            const modal = document.getElementById('custom-modal');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    </script>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- 1. Header (Navigation) -->
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2 text-2xl font-extrabold text-secondary-violet">
+                    <!-- Icon: Lipstick (Beauty/Style) -->
+                    <svg class="w-6 h-6 text-primary-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15M6.5 6.5h11a.5.5 0 01.5.5v10a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5z"></path></svg>
+                    <span>Bloom & Style</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#categories" class="text-dark-text hover:text-primary-rose transition duration-300 font-medium">Categories</a>
+                    <a href="#reviews" class="text-dark-text hover:text-primary-rose transition duration-300 font-medium">Reviews</a>
+                    <a href="#mission" class="text-dark-text hover:text-primary-rose transition duration-300 font-medium">About Us</a>
+                    <a href="#policy" class="text-dark-text hover:text-primary-rose transition duration-300 font-medium">Legal & Policy</a>
+                    <button onclick="showModal('Affiliate Disclosure', 'We use affiliate links to fund our content creation. Shopping through these links helps support Bloom & Style at no extra cost to you!')" class="px-4 py-1.5 bg-accent-gold text-white rounded-full hover:bg-primary-rose transition duration-300 shadow-md">Shop</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-dark-text hover:text-primary-rose focus:outline-none" onclick="toggleMobileMenu()">
+                        <!-- Icon: Menu -->
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-soft-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#categories" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-soft-gray hover:text-primary-rose">Categories</a>
+                <a href="#reviews" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-soft-gray hover:text-primary-rose">Reviews</a>
+                <a href="#mission" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-soft-gray hover:text-primary-rose">About Us</a>
+                <a href="#policy" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-soft-gray hover:text-primary-rose">Legal & Policy</a>
+                <button onclick="showModal('Affiliate Disclosure', 'We use affiliate links to fund our content creation. Shopping through these links helps support Bloom & Style at no extra cost to you!')" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-accent-gold hover:bg-primary-rose mt-2">Shop</button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-white pt-16 pb-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-                <div class="lg:col-span-6 xl:col-span-6">
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                        <span class="block">Dress Better.</span>
-                        <span class="block text-primary">Stress Less.</span>
-                    </h2>
-                    <p class="mt-3 text-xl text-gray-500 sm:mt-5 sm:text-2xl">
-                        Discover the power of a Capsule Wardrobe: fewer clothes, endless outfits. We guide you from clutter to clarity, curating a selection of timeless pieces that work for *your* life.
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- 2. Hero Section (Content Focused) -->
+        <section class="text-center py-16 sm:py-24 bg-white rounded-3xl shadow-xl mb-12 border-4 border-primary-rose/20">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-dark-text mb-4">
+                Your Aesthetic Guide to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-rose to-secondary-violet">Style & Confidence</span>.
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover honest reviews, curated recommendations, and the latest trends tailored for the modern, creative individual.
+            </p>
+            <div class="mt-8 space-x-4">
+                <a href="#reviews" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-primary-rose rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-xl">Read Latest Reviews</a>
+                <a href="#categories" class="inline-block px-8 py-3 text-lg font-semibold text-secondary-violet bg-white border-2 border-secondary-violet rounded-full transition duration-300 hover:bg-secondary-violet hover:text-white">Explore Categories</a>
+            </div>
+        </section>
+
+        <!-- 3. Content Categories -->
+        <section id="categories" class="py-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-secondary-violet">Explore Our Featured Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Category Card 1: Beauty -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border border-primary-rose/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-rose/10 mb-4">
+                        <!-- Icon: Eye Liner -->
+                        <svg class="w-6 h-6 text-primary-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m0-15l-6 6M12 4.5l6 6M5 19h14"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text mb-2">Honest Beauty Reviews</h3>
+                    <p class="text-gray-600">Deep dives into skincare, makeup launches, and viral products. Unbiased opinions and swatches for all skin types.</p>
+                </div>
+
+                <!-- Category Card 2: Fashion -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border border-secondary-violet/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-secondary-violet/10 mb-4">
+                        <!-- Icon: Dress/Clothing -->
+                        <svg class="w-6 h-6 text-secondary-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM12 18V6a3 3 0 013 3v6a3 3 0 01-3 3zM12 18H8M12 6h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text mb-2">Trend Reports & Style Guides</h3>
+                    <p class="text-gray-600">Curated looks, seasonal forecasts, and sustainable fashion spotlights. Find inspiration for your next outfit.</p>
+                </div>
+
+                <!-- Category Card 3: Lifestyle -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border border-primary-rose/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-rose/10 mb-4">
+                        <!-- Icon: Heart/Self Care -->
+                        <svg class="w-6 h-6 text-primary-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-.318-.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark-text mb-2">Self-Care & Wellness</h3>
+                    <p class="text-gray-600">Tips for mindfulness, desk organization, and creating an aesthetic, balanced life. It's more than just looking good!</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Latest Review Snippet -->
+        <section id="reviews" class="mt-12 py-10 px-6 bg-secondary-violet rounded-3xl text-white shadow-xl">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold mb-3">Featured Review: The Cloud Cream</h2>
+                    <p class="text-purple-200 text-lg italic">
+                        "This moisturizer isn't just hype—it's a game-changer for thirsty skin. Lightweight, plumping, and truly gives you that 'glass skin' finish. Read our full 5-star breakdown."
                     </p>
-                    <div class="mt-10 max-w-md mx-auto sm:flex sm:justify-center lg:mx-0">
-                        <div class="rounded-full shadow">
-                            <a href="#guide" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white btn-primary md:py-4 md:text-lg md:px-10">
-                                Start Your Journey
-                            </a>
-                        </div>
-                    </div>
                 </div>
-                <div class="mt-12 lg:mt-0 lg:col-span-6 xl:col-span-6">
-                    <!-- Placeholder Image for Visual Appeal -->
-                    <img class="rounded-xl shadow-2xl object-cover h-96 w-full lg:h-auto" 
-                         src="https://placehold.co/800x600/1f2937/ffffff?text=Curated+Style" 
-                         alt="A clean, minimalist wardrobe layout with essential clothes folded."
-                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/1f2937/ffffff?text=Curated+Style';">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content Section: The Guide -->
-    <main id="guide" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <!-- Introduction to the Concept -->
-        <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg mb-16">
-            <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-3">What is a Capsule Wardrobe?</h3>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                A capsule wardrobe is a collection of essential, timeless clothing items that can be easily mixed and matched. It removes decision fatigue, saves you money, and ensures you always look polished. It's not about owning *nothing*; it's about owning the *right things*.
-            </p>
-            <p class="text-gray-700 text-lg leading-relaxed italic border-l-4 border-primary pl-4">
-                "The goal is simple: maximize outfit combinations while minimizing the total number of items."
-            </p>
-        </div>
-
-        <!-- Section 1: 5 Core Categories & Affiliate Potential -->
-        <section id="essentials" class="mb-16">
-            <h3 class="text-3xl font-bold text-gray-900 mb-8">The 5 Core Categories to Invest In</h3>
-            <p class="text-gray-600 text-xl mb-8">
-                These are the foundation of your wardrobe—where quality truly matters. Investing here pays off with years of wear.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Essential Card 1: Outerwear -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
-                    <h4 class="text-2xl font-semibold mb-3">1. Investment Outerwear</h4>
-                    <p class="text-gray-600 mb-4">A perfectly tailored trench coat or a sharp wool blazer will instantly elevate any base outfit. Choose neutral colors like navy, camel, or black.</p>
-                    <a href="./reviews.html" class="text-primary font-medium hover:underline text-sm tracking-wider">
-                        Shop Our Top-Rated Blazers &rarr; <!-- Link Updated -->
-                    </a>
-                </div>
-                
-                <!-- Essential Card 2: Denim -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
-                    <h4 class="text-2xl font-semibold mb-3">2. Flawless Denim</h4>
-                    <p class="text-gray-600 mb-4">Forget fast-fashion jeans. Focus on two pairs: a dark wash, straight-leg for polish, and a light wash, comfortable pair for weekends. Fit is everything here.</p>
-                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
-                        See Our Guide to Finding Your Perfect Fit (Affiliate Link) &rarr;
-                    </a>
-                </div>
-
-                <!-- Essential Card 3: Footwear -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
-                    <h4 class="text-2xl font-semibold mb-3">3. Go-Anywhere Footwear</h4>
-                    <p class="text-gray-600 mb-4">One clean white sneaker, one classic leather loafer, and one practical ankle boot. That's usually all you need to cover 90% of occasions year-round.</p>
-                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
-                        Shop Durable, Comfortable Shoes (Affiliate Link) &rarr;
-                    </a>
-                </div>
-
-                <!-- Essential Card 4: Base Layers -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary">
-                    <h4 class="text-2xl font-semibold mb-3">4. Quality Base Layers</h4>
-                    <p class="text-gray-600 mb-4">White tees, black tank tops, and classic cotton sweaters. They need to be durable and hold their shape, as they are the workhorses of every outfit.</p>
-                    <a href="#" class="text-primary font-medium hover:underline text-sm tracking-wider">
-                        The 3 Best Base Layer Brands We Love (Affiliate Link) &rarr;
-                    </a>
+                <div class="mt-6 md:mt-0 md:w-1/3 flex justify-end">
+                    <button onclick="showModal('Cloud Cream Review', 'The full review would be displayed here, featuring comparison photos, ingredient analysis, and where to buy with a special affiliate discount.')" class="px-6 py-3 bg-accent-gold text-white font-semibold rounded-full hover:bg-primary-rose transition duration-300 shadow-lg">Read Post</button>
                 </div>
             </div>
         </section>
 
 
-        <!-- Section 2: Step-by-Step Guide -->
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-gray-900 mb-8">Building Your First Capsule: A 4-Step Process</h3>
-
-            <ol class="space-y-8">
-                <li class="p-6 bg-white rounded-xl shadow-md">
-                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">1.</span>
-                    <div class="inline-block w-3/4">
-                        <h4 class="text-xl font-semibold mb-2">Define Your Lifestyle (The 80/20 Rule)</h4>
-                        <p class="text-gray-700">What do you do 80% of the time? Work from home? Business formal? Casual errands? Your capsule must reflect reality, not the outfits you *wish* you wore. This determines your initial purchase priority.</p>
-                    </div>
-                </li>
-                <li class="p-6 bg-white rounded-xl shadow-md">
-                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">2.</span>
-                    <div class="inline-block w-3/4">
-                        <h4 class="text-xl font-semibold mb-2">Choose Your Color Palette</h4>
-                        <p class="text-gray-700">Pick 2-3 **Neutrals** (Black, White, Gray, Navy, Beige) and 1-2 **Accent Colors** (Mustard, Deep Green, Dusty Rose). Every item you buy should match every other neutral piece you own.</p>
-                    </div>
-                </div>
-                </li>
-                <li class="p-6 bg-white rounded-xl shadow-md">
-                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">3.</span>
-                    <div class="inline-block w-3/4">
-                        <h4 class="text-xl font-semibold mb-2">Audit and Cull Your Closet</h4>
-                        <p class="text-gray-700">Remove anything that doesn't fit, is damaged, or hasn't been worn in a year. Be ruthless. Only re-introduce pieces that fit your new defined lifestyle and color palette. This is the hardest part!</p>
-                    </div>
-                </li>
-                <li class="p-6 bg-white rounded-xl shadow-md">
-                    <span class="text-4xl font-extrabold text-primary mr-4 inline-block align-top">4.</span>
-                    <div class="inline-block w-3/4">
-                        <h4 class="text-xl font-semibold mb-2">Shop Mindfully & Fill the Gaps</h4>
-                        <p class="text-gray-700">Create a shopping list based *only* on the gaps identified in Step 3. Use our affiliate-backed reviews to find the best quality piece for your budget, ensuring your investment lasts.</p>
-                        <a href="#shop" class="text-sm font-medium text-primary hover:text-gray-900 mt-2 inline-block">See our Gap-Filling Recommendations &rarr;</a>
-                    </div>
-                </li>
-            </ol>
-        </section>
-
-        <!-- Section 3: Affiliate Product Call-to-Action -->
-        <section id="shop" class="bg-white p-8 sm:p-12 rounded-xl shadow-2xl">
-            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Curated Picks: High-Quality, High-Versatility</h3>
-            <p class="text-center text-gray-600 mb-10 text-lg max-w-3xl mx-auto">
-                We've done the research so you don't have to. These pieces are consistently recommended for their durability, fit, and timeless style—perfect for anchoring your new capsule.
-            </p>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Product Card 1: The Essential Blazer -->
-                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
-                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=Essential+Blazer" alt="A classic black tailored blazer" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=Essential+Blazer';">
-                    <div class="p-4 flex flex-col flex-grow">
-                        <h4 class="text-xl font-semibold text-gray-900">The All-Season Black Blazer</h4>
-                        <p class="text-gray-500 text-sm mt-1 mb-3">Our #1 pick for effortless professional and casual wear.</p>
-                        <div class="mt-auto">
-                            <span class="text-lg font-bold text-gray-800">$189.00</span>
-                            <a href="./reviews.html" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
-                                View Full Review &rarr; <!-- Link Updated -->
-                            </a>
+        <!-- 5. Policy & Legal Snippet -->
+        <section id="policy" class="mt-12 py-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 text-primary-rose">Transparency & Trust</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-xl border border-soft-gray">
+                <h3 class="text-2xl font-semibold text-dark-text mb-4">Disclosure Summary</h3>
+                <p class="text-gray-600 mb-6">
+                    Bloom & Style is committed to 100% transparency. Our reviews are honest, regardless of sponsorship. We clearly mark all paid content and affiliate links. Your trust is our most valuable asset.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start space-x-3">
+                        <!-- Icon: Handshake -->
+                        <svg class="w-6 h-6 text-secondary-violet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3S6 12.657 6 11s1.343-3 3-3 3 1.343 3 3zM21 12h-4m-5.414 4.414l-2.121 2.121M12 17.586l-2.121 2.121M12 6.414l2.121 2.121M17 12h-4"></path></svg>
+                        <div>
+                            <p class="font-semibold text-dark-text">Affiliate Disclosure</p>
+                            <a href="#" onclick="showModal('Affiliate Disclosure Policy', 'We earn a small commission on sales made through certain links. This supports the creation of free content. This never influences our editorial review scores.')" class="text-primary-rose hover:underline text-sm">View full document (Simulated)</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Product Card 2: The Perfect Denim -->
-                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
-                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=Dark+Wash+Jeans" alt="Straight-leg dark wash jeans" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=Dark+Wash+Jeans';">
-                    <div class="p-4 flex flex-col flex-grow">
-                        <h4 class="text-xl font-semibold text-gray-900">High-Rise Straight Leg Denim</h4>
-                        <p class="text-gray-500 text-sm mt-1 mb-3">The non-stretch pair that holds its shape wash after wash.</p>
-                        <div class="mt-auto">
-                            <span class="text-lg font-bold text-gray-800">$95.00</span>
-                            <a href="#" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
-                                Shop Now (Affiliate Link)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 3: The Versatile Sneaker -->
-                <div class="flex flex-col rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition duration-300">
-                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x300/e5e7eb/374151?text=White+Sneaker" alt="Minimalist white leather sneakers" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e5e7eb/374151?text=White+Sneaker';">
-                    <div class="p-4 flex flex-col flex-grow">
-                        <h4 class="text-xl font-semibold text-gray-900">The Minimalist White Sneaker</h4>
-                        <p class="text-gray-500 text-sm mt-1 mb-3">Durable leather, low-profile, perfect with dresses or trousers.</p>
-                        <div class="mt-auto">
-                            <span class="text-lg font-bold text-gray-800">$120.00</span>
-                            <a href="#" class="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white btn-primary hover:bg-gray-700 transition duration-150">
-                                Shop Now (Affiliate Link)
-                            </a>
+                    <div class="flex items-start space-x-3">
+                         <!-- Icon: Book Open -->
+                        <svg class="w-6 h-6 text-secondary-violet mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5v11M17 10h-2M17 14h-2M15 17h-2M7 10h2M7 14h2M9 17h2"></path></svg>
+                        <div>
+                            <p class="font-semibold text-dark-text">Content Terms</p>
+                            <a href="#" onclick="showModal('Content Usage Policy', 'All content, images, and editorial pieces are copyrighted by Bloom & Style and cannot be reproduced without written permission.')" class="text-primary-rose hover:underline text-sm">View full document (Simulated)</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <p class="text-xs text-center text-gray-400 mt-8">
-                *Note: Product recommendations contain affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.
-            </p>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 mt-16">
-        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-            <div class="mt-8 flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Pinterest</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a>
+    <!-- 6. Footer -->
+    <footer class="bg-dark-text mt-12 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-white text-xl font-bold mb-3">Bloom & Style</p>
+            <p class="text-gray-400 text-sm">© 2025 Bloom & Style, LLC. All rights reserved. | Style, Substance, and Transparency.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-primary-rose transition duration-300">
+                    <!-- Icon: Instagram (Crucial for a beauty/fashion brand) -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-3.14 0-3.524.013-4.764.068-1.242.055-2.09.255-2.83.545-.7.272-1.33.65-1.92.933-.59.284-1.12.63-1.63.856-.51.226-1.04.34-1.6.34-.55 0-1.09-.114-1.6-.34-.51-.226-1.04-.573-1.63-.856-.59-.283-1.23-.66-1.92-.933-.74-.29-1.588-.49-2.83-.545C3.524 2.013 3.14 2 0 2v20c3.14 0 3.524-.013 4.764-.068 1.242-.055 2.09-.255 2.83-.545.7-.272 1.33-.65 1.92-.933.59-.284 1.12-.63 1.63-.856.51-.226 1.04-.34 1.6-.34.55 0 1.09.114 1.6.34.51.226 1.04.573 1.63.856.59.283 1.23.66 1.92.933.74.29 1.588.49 2.83.545C20.476 21.987 20.86 22 24 22V2zM12 4c2.614 0 2.946.01 4.04.058 1.1.047 1.79.227 2.44.47.6.223 1.07.493 1.5.86.43.367.78.847.99 1.39.21.543.377 1.153.42 1.91.043.757.05 1.087.05 2.4v.05c0 1.313-.007 1.643-.05 2.4-.043.757-.21 1.367-.42 1.91-.21.543-.56 1.023-.99 1.39-.43.367-.9.637-1.5.86-.65.243-1.34.423-2.44.47-1.094.048-1.426.058-4.04.058s-2.946-.01-4.04-.058c-1.1-.047-1.79-.227-2.44-.47-.6-.223-1.07-.493-1.5-.86-.43-.367-.78-.847-.99-1.39-.21-.543-.377-1.153-.42-1.91-.043-.757-.05-1.087-.05-2.4v-.05c0-1.313.007-1.643.05-2.4.043-.757.21-1.367.42-1.91.21-.543.56-1.023.99-1.39.43-.367.9-.637 1.5-.86.65-.243 1.34-.423 2.44-.47C9.054 4.01 9.386 4 12 4zM12 6.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM12 8a4 4 0 110 8 4 4 0 010-8zm5-1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-secondary-violet transition duration-300">
+                    <!-- Icon: Pinterest (Highly relevant for blog) -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 4.237 2.193 7.96 5.538 10.08-.12-.865-.182-1.85-.182-2.88 0-2.88 1.83-4.888 4.316-4.888 1.708 0 2.492.838 2.898 2.008.384 1.11.205 2.65-.384 3.428-.56 1.088-2.61 2.05-3.86 1.536-1.002-.4-1.218-1.56-1.218-2.52 0-2.438 1.488-3.792 3.192-3.792 1.344 0 2.21.78 2.21 2.664 0 1.056-.408 2.592-1.008 3.528-.468.738-1.584.864-2.544.24-1.008-.624-1.32-2.112-1.32-3.48 0-.96.096-1.848.336-2.664.24-.816.6-1.536 1.08-2.064.48-.528 1.056-.816 1.8-.816 1.392 0 2.208 1.008 2.208 2.664 0 2.88-1.83 4.888-4.316 4.888-2.486 0-4.008-2.16-4.008-4.992 0-2.736 1.944-4.896 4.608-4.896 2.304 0 4.392 1.728 4.392 4.08 0 .432-.048.864-.144 1.272.072.096.144.192.216.288.72 1.056 1.008 2.304.792 3.48-.192 1.176-.792 2.28-1.872 3.096-1.08.816-2.544 1.008-4.248.528-1.704-.48-2.64-1.632-2.64-3.072 0-.816.144-1.536.408-2.184.264-.648.648-1.152 1.104-1.488.456-.336 1.008-.48 1.632-.48 1.584 0 2.592 1.008 2.592 2.664 0 2.88-1.83 4.888-4.316 4.888-2.486 0-4.008-2.16-4.008-4.992 0-2.736 1.944-4.896 4.608-4.896 2.304 0 4.392 1.728 4.392 4.08 0 .432-.048.864-.144 1.272.072.096.144.192.216.288.72 1.056 1.008 2.304.792 3.48-.192 1.176-.792 2.28-1.872 3.096-1.08.816-2.544 1.008-4.248.528-1.704-.48-2.64-1.632-2.64-3.072 0-.816.144-1.536.408-2.184.264-.648.648-1.152 1.104-1.488.456-.336 1.008-.48 1.632-.48 1.584 0 2.592 1.008 2.592 2.664 0 2.88-1.83 4.888-4.316 4.888-2.486 0-4.008-2.16-4.008-4.992 0-2.736 1.944-4.896 4.608-4.896 2.304 0 4.392 1.728 4.392 4.08 0 .432-.048.864-.144 1.272z"></path></svg>
+                </a>
             </div>
-            <p class="mt-8 text-center text-base text-gray-400">
-                &copy; 2025 The Minimalist Wardrobe. All rights reserved.
-            </p>
         </div>
     </footer>
 
+
+    <!-- Custom Modal Structure (Hidden by default) -->
+    <div id="custom-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full shadow-2xl transform transition-all scale-100">
+            <h3 id="modal-title" class="text-2xl font-bold text-primary-rose mb-4">Modal Title</h3>
+            <p id="modal-message" class="text-gray-700 mb-6">Modal Content Message</p>
+            <button onclick="closeModal()" class="w-full px-4 py-2 bg-secondary-violet text-white rounded-full hover:bg-primary-rose transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
